@@ -4,20 +4,7 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.addColumn(
       'Posts',
-      'postType',
-      {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'PostTypes',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-      }
-    )
-    await queryInterface.addColumn(
-      'Posts',
-      'status',
+      'StatusID',
       {
         type: Sequelize.INTEGER,
         references: {
@@ -37,6 +24,5 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.dropTable('Posts');
   }
 };
