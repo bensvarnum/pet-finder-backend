@@ -4,17 +4,12 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Post extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
       models.PostTypes.hasMany(models.Post);
       models.Post.belongsTo(models.PostTypes);
 
       models.Status.hasMany(models.Post);
-      models.Post.belontsTo(models.Status);
+      models.Post.belongsTo(models.Status);
     }
   };
   Post.init({
