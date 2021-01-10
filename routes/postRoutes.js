@@ -19,28 +19,27 @@ router.get(`/color/:color`, async (req, res) => {
       color: color,
     },
   });
-  res.send(colorSearch)
+  res.send(colorSearch);
 });
 
 router.get(`/size/:size`, async (req, res) => {
-    const size = req.params.size;
-    const sizeSearch = await db.Post.findAll({
-      where: {
-        size: size,
-      },
-    });
-    res.send(sizeSearch)
+  const size = req.params.size;
+  const sizeSearch = await db.Post.findAll({
+    where: {
+      size: size,
+    },
   });
+  res.send(sizeSearch);
+});
 
 router.get(`/name/:name`, async (req, res) => {
-const  name = req.params.name;
-const nameSearch = await db.Post.findAll({
+  const name = req.params.name;
+  const nameSearch = await db.Post.findAll({
     where: {
-    petName: name,
+      petName: name,
     },
+  });
+  res.send(nameSearch);
 });
-res.send(nameSearch)
-});
-
 
 module.exports = router;
