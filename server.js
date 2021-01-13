@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
 
-const postRoutes = require('./routes/postRoutes');
+const postRoutes = require('./routes/GETpostRoutes');
 app.use('/posts', postRoutes);
 app.use(bodyParser.json())
 
