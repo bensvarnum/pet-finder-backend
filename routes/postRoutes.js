@@ -51,7 +51,7 @@ router.get('/limit/:number', async (req,res)=>{
 router.get('/resolved', async(req, res)=>{
   const resolved = await post.findAll({
     where: {
-      StatusTypeId: 1
+      StatusId: 1
     }
   }
   );
@@ -62,7 +62,7 @@ router.get('/resolved', async(req, res)=>{
 router.get('/unresolved', async(req, res)=>{
   const unresolved = await post.findAll({
     where: {
-      StatusTypeId: 2
+      StatusId: 2
     }
   }
   );
