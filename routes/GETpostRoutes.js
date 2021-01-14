@@ -44,8 +44,17 @@ router.get(`/name/:name`, async (req, res) => {
   res.send(nameSearch);
 });
 
-router.get('/limit/:number', async (req,res)=>{
+router.get('/limit/posttype/:type/:limit', async (req,res)=>{
+  const type = req.params.type;
+  const limit = req.params.limit;
 
+  const limitPosts = await post.findAll({
+    where: {
+      PostTypeId: type
+    },
+    limit: limit
+  })
+  res.send(limitPosts);
 })
 
 router.get('/resolved', async(req, res)=>{
