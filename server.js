@@ -2,10 +2,15 @@ require("dotenv").config();
 const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
-
-const postRoutes = require('./routes/GETpostRoutes');
-app.use('/posts', postRoutes);
 app.use(bodyParser.json())
+
+
+const GETpostRoutes = require('./routes/GETpostRoutes');
+const OTHERpostRoutes = require('./routes/OTHERpostRoutes');
+
+app.use('/posts', OTHERpostRoutes);
+app.use('/posts', GETpostRoutes);
+
 
 
 app.listen(process.env.PORT, ()=> {
