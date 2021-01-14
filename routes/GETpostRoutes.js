@@ -50,7 +50,8 @@ router.get('/limit/posttype/:type/:limit', async (req,res)=>{
 
   const limitPosts = await post.findAll({
     where: {
-      PostTypeId: type
+      PostTypeId: type,
+      StatusId: 2
     },
     limit: limit
   })
