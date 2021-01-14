@@ -57,6 +57,19 @@ router.get('/limit/posttype/:type/:limit', async (req,res)=>{
   res.send(limitPosts);
 })
 
+router.get('/limit/status/:type/:limit', async (req,res)=>{
+  const type = req.params.type;
+  const limit = req.params.limit;
+
+  const limitPosts = await post.findAll({
+    where: {
+      StatusId: type
+    },
+    limit: limit
+  })
+  res.send(limitPosts);
+})
+
 router.get('/resolved', async(req, res)=>{
   const resolved = await post.findAll({
     where: {
