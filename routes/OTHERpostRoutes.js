@@ -8,6 +8,7 @@ const post = db.Post;
 router.post('/add', async(req, res)=>{
     console.log(req.body)
     const { color, size, location, petName, email, phoneNumber, PostTypeId } = req.body;
+    const { mimetype, originalname, buffer } = req.file;
 
     const newPost = await post.create({
         color,
@@ -17,7 +18,10 @@ router.post('/add', async(req, res)=>{
         email,
         phoneNumber,
         PostTypeId,
-        StatusId: 2
+        StatusId: 2,
+        imageType: mimetype,
+        imageName: originalname,
+        imageData: buffer
     })
 
     res.send('New Post created');

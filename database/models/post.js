@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+
+const picture = require('../attachments')
 module.exports = (sequelize, DataTypes) => {
   class Post extends Model {
     static associate(models) {
