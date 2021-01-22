@@ -20,6 +20,7 @@ router.get(`/color/:color/:limit`, async (req, res) => {
   const colorSearch = await post.findAll({
     where: {
       color: color,
+      StatusId: 2,
     },
     limit: req.params.limit,
   });
@@ -31,6 +32,7 @@ router.get(`/size/:size/:limit`, async (req, res) => {
   const sizeSearch = await post.findAll({
     where: {
       size: size,
+      StatusId: 2,
     },
     limit: req.params.limit,
   });
@@ -42,6 +44,7 @@ router.get(`/name/:name/:limit`, async (req, res) => {
   const nameSearch = await post.findAll({
     where: {
       petName: name,
+      StatusId: 2,
     },
     limit: req.params.limit,
   });
@@ -73,6 +76,7 @@ router.get("/lost/:limit", async (req, res) => {
   const lost = await post.findAll({
     where: {
       PostTypeId: 1,
+      StatusId: 2,
     },
     limit: req.params.limit,
   });
@@ -84,6 +88,7 @@ router.get("/found/:limit", async (req, res) => {
   const found = await post.findAll({
     where: {
       PostTypeId: 2,
+      StatusId: 2,
     },
     limit: req.params.limit,
   });
