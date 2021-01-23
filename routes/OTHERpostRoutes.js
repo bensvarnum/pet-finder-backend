@@ -17,6 +17,8 @@ router.post("/add", async (req, res) => {
     PostTypeId,
   } = req.body.form;
 
+  let extraNotes = req.body.form.extraNotes ? req.body.form.extraNotes : null;
+
   const newPost = await post.create({
     color,
     size,
@@ -26,6 +28,7 @@ router.post("/add", async (req, res) => {
     phoneNumber,
     PostTypeId,
     StatusId: 2,
+    extraNotes,
   });
 
   res.send("New Post created");
