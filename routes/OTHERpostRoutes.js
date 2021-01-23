@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+var multer = require("multer");
+var upload = multer({ dest: "uploads/" });
 require("dotenv").config();
 
 const post = db.Post;
 
-router.post("/add", async (req, res) => {
+router.post("/add", upload.single("pet"), async (req, res) => {
   console.log(req.body);
+  console.log(req.file);
   const {
     color,
     size,
