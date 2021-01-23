@@ -15,7 +15,7 @@ router.post("/add", async (req, res) => {
     email,
     phoneNumber,
     PostTypeId,
-  } = req.body;
+  } = req.body.form;
 
   const newPost = await post.create({
     color,
