@@ -17,7 +17,7 @@ router.post("/add", async (req, res) => {
     postTypeId,
   } = req.body.form;
 
-  let extraNotes = req.body.form.extraNotes ? req.body.form.extraNotes : null;
+  let extraNotes = req.body.form.description ? req.body.form.description : null;
 
   const newPost = await post.create({
     color,
