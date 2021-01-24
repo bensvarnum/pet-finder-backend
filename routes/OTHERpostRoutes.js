@@ -14,7 +14,7 @@ router.post("/add", async (req, res) => {
     petName,
     email,
     phoneNumber,
-    PostTypeId,
+    postTypeId,
   } = req.body.form;
 
   let extraNotes = req.body.form.extraNotes ? req.body.form.extraNotes : null;
@@ -26,7 +26,7 @@ router.post("/add", async (req, res) => {
     petName,
     email,
     phoneNumber,
-    PostTypeId,
+    PostTypeId: postTypeId,
     StatusId: 2,
     extraNotes,
   });
