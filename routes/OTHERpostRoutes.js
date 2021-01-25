@@ -27,7 +27,8 @@ router.post("/add", async (req, res) => {
     phoneNumber,
     PostTypeId: postTypeId,
     StatusId: 2,
-    extraNotes: "hello world",
+    extraNotes,
+    description,
   });
 
   res.send("New Post created");
