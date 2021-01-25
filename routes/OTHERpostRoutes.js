@@ -27,7 +27,6 @@ router.post("/add", async (req, res) => {
     phoneNumber,
     PostTypeId: postTypeId,
     StatusId: 2,
-    extraNotes,
     description,
   });
 
