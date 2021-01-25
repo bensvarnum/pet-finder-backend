@@ -12,6 +12,7 @@ router.get("/test", (req, res) => {
 
 router.get("/all", async (req, res) => {
   const allPosts = await post.findAll();
+  console.log(allPosts);
   res.send(allPosts);
 });
 
