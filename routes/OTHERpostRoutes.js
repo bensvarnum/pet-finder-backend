@@ -16,6 +16,7 @@ router.post("/add", async (req, res) => {
     phoneNumber,
     postTypeId,
     description,
+    image,
   } = req.body.form;
 
   const newPost = await post.create({
@@ -28,6 +29,7 @@ router.post("/add", async (req, res) => {
     PostTypeId: postTypeId,
     StatusId: 2,
     description,
+    url: image,
   });
 
   res.send("New Post created");
